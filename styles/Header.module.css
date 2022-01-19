@@ -1,0 +1,33 @@
+.header{
+    background: #017EFE;
+    width: 100%;
+}
+.nav{
+    background: #017EFE;
+    height: 63px;
+    margin: 0 8rem 0 8rem;
+    display: flex;
+    align-items: center;
+    color:#FDFDFD;
+    justify-content: space-between;
+}
+
+/* .nav h1{
+    color: #fff;
+} */
+.nav div{
+    display: flex;
+    width: 221px;
+}
+.nav button{
+    width:156px;
+    color:#FDFDFD;
+    background: #424242;
+    margin-left:12px;
+    height:38px;
+    margin-top: 6px;
+    border:none;
+    cursor:pointer;
+   
+}
+
