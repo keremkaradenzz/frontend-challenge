@@ -1,12 +1,9 @@
 import React from "react";
-import { Movies } from "../types/types";
-import getMovie from "./api/movies";
 import { useQuery } from "react-query";
-const Test = () => {
+const HomePage = () => {
   const { isLoading, error, data } = useQuery("getMovie", () =>
     fetch("http://localhost:3000/api/movies").then((res) => res.json())
   );
-
   return <div></div>;
 };
 
@@ -20,4 +17,4 @@ const Test = () => {
 //   };
 // };
 
-export default Test;
+export default HomePage;
