@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <QueryClientProvider client={queryClient}>
       <Header />
       <Titles />
-      <main style={{ overflowY: "hidden",minHeight: "58.2vh",height: "100%"}}>
+      <main style={{ overflowY: "hidden",minHeight: "100vh",height: "100%"}}>
         <Component {...pageProps} />
       </main>
       <footer>
