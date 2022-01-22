@@ -1,19 +1,25 @@
-import React,{ useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 import Card from "../components/Card/Card";
 import { Row, Col } from "antd";
+import { sortObjects } from "../helpers/helper";
 const Movies = () => {
-  const [movieData , setMovieData] = useState([]);
+  const [movieData, setMovieData] = useState([]);
+  const [searchData, setSearchData] = useState([]);
   const { isLoading, error, data } = useQuery("getMovie", () =>
     fetch("http://localhost:3000/api/movies").then((res) => res.json())
   );
 
-  useEffect(()=>{
-    if(data?.entries){
-      const filter = data.entries.filter((item:any) => item.programType === "movie");
-      setMovieData(filter)
+  useEffect(() => {
+    if (data?.entries) {
+      const filter = data.entries.filter(
+        (item: any) => item.programType === "movie" && item.releaseYear >= 2010
+      );
+      const sortFilter = sortObjects(filter, "title");
+      setMovieData(sortFilter);
+      setSearchData(sortFilter);
     }
-  },[data])
+  }, [data]);
 
   if (isLoading) {
     return <span>Loading...</span>;
@@ -28,7 +34,8 @@ const Movies = () => {
           <Row gutter={8}>
             {movieData?.map(
               (item: any, index: any) =>
-                (index <= 20 && item.programType === "movie") &&(
+                index <= 20 &&
+                item.programType === "movie" && (
                   <Col
                     key={index}
                     xs={{ span: 6, offset: 1 }}

@@ -3,6 +3,7 @@ import { useQuery } from "react-query";
 import Card from "../components/Card/Card";
 import { Row, Col } from "antd";
 import { Input, Space } from "antd";
+import {sortObjects} from "../helpers/helper";
 const { Search } = Input;
 
 const Series = () => {
@@ -15,10 +16,12 @@ const Series = () => {
   useEffect(() => {
     if (data?.entries) {
       const filter = data.entries.filter(
-        (item: any) => item.programType === "series"
+        (item: any) => item.programType === "series" && item.releaseYear >= 2010
       );
-      setSeriesData(filter);
-      setSearchData(filter);
+      
+      const sortFilter = sortObjects(filter, "title");
+      setSeriesData(sortFilter)
+      setSearchData(sortFilter)
     }
   }, [data]);
 
