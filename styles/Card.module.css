@@ -1,0 +1,35 @@
+.card{
+    background-color:#1E1E1E;
+    width: 134px;
+    height:201px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    position:relative;
+    cursor:pointer;
+    margin-bottom: 10px;
+}
+
+.rect{
+    background-color:#3F3F3F;
+    width:68px;
+    height:77px;
+    
+}
+
+.title{
+    color:white;
+    font-size: 1rem;
+    position:absolute;
+    word-wrap:break-word;
+    margin-left: 23px;
+    width:100px;
+    font-weight: bold;
+
+}
+
+.description{
+    color:#1E1E1E;
+    font-size: 0.813rem;
+    width: 130px;
+}
