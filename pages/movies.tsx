@@ -4,7 +4,7 @@ import Card from "../components/Card/Card";
 import { Row, Col } from "antd";
 import { sortObjects, sortList } from "../helpers/helper";
 import SelectInput from "../components/Select/SelectInput";
-import { Input, Space } from "antd";
+import { Input } from "antd";
 const { Search } = Input;
 const Movies = () => {
   const [movieData, setMovieData] = useState<object[]>([]);
