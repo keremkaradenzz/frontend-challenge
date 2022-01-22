@@ -2,10 +2,10 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import HomePage from "../components/Home/Home";
 import Card from "../components/Card/Card";
 import { useRouter } from "next/router";
 import { Row, Col } from "antd";
+import Footer from "../components/Footer/Footer";
 
 export const titles: string[] = ["Series", "Movies"];
 
@@ -24,9 +24,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <HomePage />
-
-      <Row >
+      <Row>
         {titles.map((title, index) => (
           <Col
             key={index}
@@ -39,17 +37,6 @@ const Home: NextPage = () => {
           </Col>
         ))}
       </Row>
-
-      {/* <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next JS</a>
-        </h1>
-       
-      </main>
-s
-      <footer className={styles.footer}>
-       
-      </footer> */}
     </div>
   );
 };

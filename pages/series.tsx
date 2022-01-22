@@ -3,12 +3,14 @@ import { useQuery } from "react-query";
 import Card from "../components/Card/Card";
 import { Row, Col } from "antd";
 import { Input, Space } from "antd";
-import {sortObjects} from "../helpers/helper";
+import { sortObjects, sortList } from "../helpers/helper";
+import SelectInput from "../components/Select/SelectInput";
 const { Search } = Input;
 
 const Series = () => {
-  const [seriesData, setSeriesData] = useState([]);
-  const [searchData, setSearchData] = useState([]);
+  const [seriesData, setSeriesData] = useState<object[]>([]);
+  const [searchData, setSearchData] = useState<object[]>([]);
+  const [selectVal, setSelectVal] = useState<string>("sortTitleDesc");
   const { isLoading, error, data } = useQuery("getMovie", () =>
     fetch("http://localhost:3000/api/movies").then((res) => res.json())
   );
@@ -18,10 +20,10 @@ const Series = () => {
       const filter = data.entries.filter(
         (item: any) => item.programType === "series" && item.releaseYear >= 2010
       );
-      
+
       const sortFilter = sortObjects(filter, "title");
-      setSeriesData(sortFilter)
-      setSearchData(sortFilter)
+      setSeriesData(sortFilter);
+      setSearchData(sortFilter);
     }
   }, [data]);
 
@@ -44,22 +46,35 @@ const Series = () => {
     }
   };
 
-  console.log(data);
+  const handleChange = (value: string) => {
+    setSelectVal(value);
+    const sortData: object[] | undefined = sortList(searchData, value);
+    if (sortData) {
+      setSearchData(sortData);
+    }
+  };
   return (
     <main style={{ overflow: "hidden", width: "100%" }}>
       <Row>
-        <Col lg={{ span: 24, offset: 2 }}>
-          <div style={{marginBottom: 30}}>
+        <Col lg={{ span: 12, offset: 2 }}>
+          <div style={{ marginBottom: 30 }}>
             <Search
               placeholder="Search..."
               onSearch={onSearch}
               style={{ width: 400 }}
             />
           </div>
+        </Col>
+        <Col lg={{ span: 8, offset: 0 }}>
+          <div style={{ marginRight: 15, marginBottom: 30, float: "right" }}>
+            <SelectInput defaultValue={selectVal} handleChange={handleChange} />
+          </div>
+        </Col>
+        <Col lg={{ span: 24, offset: 2 }}>
           <Row gutter={8}>
             {searchData.length === 0 ? (
               <span>Sorry Not Found</span>
-            ) : ( 
+            ) : (
               searchData?.map(
                 (item: any, index: any) =>
                   index <= 20 &&

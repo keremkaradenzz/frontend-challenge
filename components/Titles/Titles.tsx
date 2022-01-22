@@ -6,7 +6,7 @@ import styles from "../../styles/Titles.module.css"
 const Titles = () => {
 
    const router = useRouter();
-   const [pathName, setPathName] = useState("Titles")
+   const [pathName, setPathName] = useState<string>("Titles")
    useEffect(()=> {
 
         let path = router.route.split("/");

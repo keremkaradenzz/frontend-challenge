@@ -4,7 +4,7 @@ import { Row, Col } from "antd";
 import Link from "next/link"
 const Header = () => {
   return (
-    <div className={styles.header}>
+    <header className={styles.header}>
       <Row>
         <Col xs={{ span: 12, offset: 2 }}>
             <Link href="/">
@@ -18,7 +18,7 @@ const Header = () => {
           </div>
         </Col>
       </Row>
-    </div>
+    </header>
   );
 };
 
