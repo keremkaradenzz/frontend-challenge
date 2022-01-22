@@ -26,12 +26,12 @@ const Home: NextPage = () => {
 
       <HomePage />
 
-      <Row>
+      <Row >
         {titles.map((title, index) => (
           <Col
             key={index}
-            lg={{ span: 2, offset: 1 }}
-            xs={{ span: 24, offset: 1 }}
+            lg={{ span: 1, offset: 2 }}
+            xs={{ span: 24, offset: 2 }}
           >
             <div onClick={() => handleClick(title.toLowerCase())}>
               <Card message={title} />

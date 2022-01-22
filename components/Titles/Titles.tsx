@@ -21,8 +21,8 @@ const Titles = () => {
    },[router.route])
    
   return <div className={styles.titles}>
-        <Row>
-            <Col lg={{span: 24, offset: 2}}>
+        <Row >
+            <Col lg={{span: 8, offset: 2}}>
                 <h2>Populer {pathName}</h2>
             </Col>
         </Row>
