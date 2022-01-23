@@ -4,7 +4,7 @@ import styles from "../../styles/Card.module.css";
 const Card = ({ message }: { message: string }) => {
   const filter: string[] = ["Movies", "Series", "Titles"];
   return (
-    <div>
+    <div data-test="cardComponent">
       <div className={styles.card}>
         <div className={styles.rect} />
         <div className={styles.title}>{message}</div>
