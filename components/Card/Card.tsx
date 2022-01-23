@@ -9,7 +9,7 @@ const Card = ({ message }: { message: string }) => {
         <div className={styles.rect} />
         <div className={styles.title}>{message}</div>
       </div>
-      <p className={styles.description}>
+      <p className={styles.description} data-test="cardMessage">
         {filter.includes(message) ? `Populer ${message}` : message}
       </p>
     </div>

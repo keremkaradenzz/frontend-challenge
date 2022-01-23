@@ -21,4 +21,8 @@ describe("renders ", () => {
     const card = findByTestAttr(comp, "cardComponent");
     expect(card.length).toBe(1);
   });
+  it("Should render a message ", () => {
+    const card = findByTestAttr(comp, "cardMessage");
+    expect(card.length).toBe(1);
+  });
 });
