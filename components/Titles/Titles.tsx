@@ -20,10 +20,10 @@ const Titles = () => {
         
    },[router.route])
    
-  return <div className={styles.titles}>
+  return <div className={styles.titles} data-test="titlesComponents">
         <Row >
             <Col lg={{span: 8, offset: 2}}>
-                <h2>Populer {pathName}</h2>
+                <h2 data-test="titlesTitle">Populer {pathName}</h2>
             </Col>
         </Row>
   </div>;
