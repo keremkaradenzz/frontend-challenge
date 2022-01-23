@@ -52,7 +52,7 @@ const Movies = () => {
   };
 
   return (
-    <main style={{ overflow: "hidden", width: "100%" }}>
+    <main style={{ overflow: "hidden", width: "100%" }} data-test="movieComponent">
       <Row>
       <Col lg={{ span: 12, offset: 2 }}>
           <div style={{ marginBottom: 30 }}>

@@ -54,10 +54,10 @@ const Series = () => {
     }
   };
   return (
-    <main style={{ overflow: "hidden", width: "100%" }}>
+    <main style={{ overflow: "hidden", width: "100%" }} data-test="seriesComponent">
       <Row>
         <Col lg={{ span: 12, offset: 2 }}>
-          <div style={{ marginBottom: 30 }}>
+          <div style={{ marginBottom: 30 }} >
             <Search
               placeholder="Search..."
               onSearch={onSearch}
