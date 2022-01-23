@@ -3,6 +3,8 @@ import { findByTestAttr } from "../../helpers/test-utils";
 import { shallow } from "enzyme";
 import Titles from "./Titles";
 
+jest.mock('next/router', () => require('next-router-mock'))
+
 const setUp = () => {
   const component = shallow(<Titles />);
   return component;
@@ -14,7 +16,7 @@ describe("renders ", () => {
     comp = setUp();
   });
   it("Should render a Titles Comp ", () => {
-    const card = findByTestAttr(comp, "titlesComponent");
+    const card = findByTestAttr(comp, "titlesComponents");
     expect(card.length).toBe(1);
   });
 
