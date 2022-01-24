@@ -1,10 +1,11 @@
 import Enzyme from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
-import { JSDOM } from "jsdom";
+
 import * as React from "react";
 import '@testing-library/jest-dom';
 import {server} from "./mocks/server";
 import { setLogger } from 'react-query';
+import { JSDOM } from 'jsdom';
 
 // Configure Enzyme with React 16 adapter
 Enzyme.configure({ adapter: new Adapter() });
