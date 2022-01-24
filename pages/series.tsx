@@ -13,9 +13,9 @@ const Series = () => {
   const [seriesData, setSeriesData] = useState<object[]>([]);
   const [searchData, setSearchData] = useState<object[]>([]);
   const [selectVal, setSelectVal] = useState<string>("sortTitleDesc");
-  
+ 
   const { isLoading, error, data } = useQuery("getMovie", () =>
-   fetch(`https://frontend-challenge-iota-cyan.vercel.app/api/movies`).then((res) => res.json())
+    fetch(`${process.env.NEXT_PUBLIC_API_BASE_ENDPOINT}api/movies`).then((res) => res.json())
   );
 
   useEffect(() => {
