@@ -5,6 +5,8 @@ import { Row, Col } from "antd";
 import { Input } from "antd";
 import { sortObjects, sortList } from "../helpers/helper";
 import SelectInput from "../components/Select/SelectInput";
+import Loading from "../components/Loading/Loading";
+import Error from "../components/Error/Error";
 const { Search } = Input;
 
 const Series = () => {
@@ -28,9 +30,9 @@ const Series = () => {
   }, [data]);
 
   if (isLoading) {
-    return <span>Loading...</span>;
+    return <Loading />
   } else if (error) {
-    return <span>Oops! Something went wrong</span>;
+    return <Error />
   }
 
   const onSearch = (value: any) => {

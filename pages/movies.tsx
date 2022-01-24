@@ -5,6 +5,8 @@ import { Row, Col } from "antd";
 import { sortObjects, sortList } from "../helpers/helper";
 import SelectInput from "../components/Select/SelectInput";
 import { Input } from "antd";
+import Loading from "../components/Loading/Loading";
+import Error from "../components/Error/Error";
 const { Search } = Input;
 const Movies = () => {
   const [movieData, setMovieData] = useState<object[]>([]);
@@ -26,9 +28,9 @@ const Movies = () => {
   }, [data]);
 
   if (isLoading) {
-    return <span>Loading...</span>;
+    return <Loading />
   } else if (error) {
-    return <span>Oops! Something went wrong</span>;
+    return <Error />
   }
   const onSearch = (value: any) => {
     if (value.length > 2) {
