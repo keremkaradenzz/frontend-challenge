@@ -13,7 +13,7 @@ const Movies = () => {
   const [searchData, setSearchData] = useState<object[]>([]);
   const [selectVal, setSelectVal] = useState<string>("sortTitleDesc");
   const { isLoading, error, data } = useQuery("getMovie", () =>
-    fetch("http://localhost:3000/api/movies").then((res) => res.json())
+    fetch(`${process.env.API_BASE_ENDPOINT}api/movies`).then((res) => res.json())
   );
 
   useEffect(() => {
