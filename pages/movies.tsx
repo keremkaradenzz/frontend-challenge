@@ -80,7 +80,7 @@ const Movies = () => {
                     lg={{ span: 3, offset: 1 }}
                     style={{ marginLeft: 1 }}
                   >
-                    <Card message={item.title} />
+                    <Card images={item.images} message={item.title} />
                   </Col>
                 )
             )}
