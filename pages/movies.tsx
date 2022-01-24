@@ -13,7 +13,7 @@ const Movies = () => {
   const [searchData, setSearchData] = useState<object[]>([]);
   const [selectVal, setSelectVal] = useState<string>("sortTitleDesc");
   const { isLoading, error, data } = useQuery("getMovie", () =>
-    fetch(`${process.env.NEXT_PUBLIC_VERCEL_URL}api/movies`).then((res) => res.json())
+    fetch(`https://frontend-challenge-iota-cyan.vercel.app/api/movies`).then((res) => res.json())
   );
 
   useEffect(() => {
