@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
 import {Movies} from "../../types/types";
-import {data} from "./Data";
+import {data} from "../../data/Data";
 
 
 export default function getMovie(

@@ -2,7 +2,7 @@ import { render } from "@testing-library/react";
 import { rest } from "msw";
 import * as React from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
-import {data} from "../pages/api/Data"
+import {data} from "../data/Data";
 export const handlers = [
   rest.get("*/movies/*", (req, res, ctx) => {
     return res(

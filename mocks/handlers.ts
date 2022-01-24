@@ -1,5 +1,5 @@
 import { rest } from 'msw'
-import {data} from "../pages/api/Data";
+import {data} from "../data/Data";
 export const handlers = [
     // Handles a POST /login request
     // rest.post('/login', null),
