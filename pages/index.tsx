@@ -30,7 +30,7 @@ const Home: NextPage = () => {
             xs={{ span: 24, offset: 2 }}
           >
             <div onClick={() => handleClick(title.toLowerCase())}>
-              <Card message={title} />
+              <Card images={undefined} message={title} />
             </div>
           </Col>
         ))}

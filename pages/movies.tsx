@@ -78,7 +78,7 @@ const Movies = () => {
                     key={index}
                     xs={{ span: 6, offset: 1 }}
                     lg={{ span: 3, offset: 1 }}
-                    style={{ marginLeft: 1 }}
+                    style={{ marginLeft: 1,marginRight:1 }}
                   >
                     <Card images={item.images} message={item.title} />
                   </Col>
