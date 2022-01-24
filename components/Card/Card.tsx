@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Card = ({ message, images }: { message: string, images: any }) => {
   const filter: string[] = ["Movies", "Series", "Titles"];
-  console.log(images);
+ 
   return (
     <div data-test="cardComponent">
       
